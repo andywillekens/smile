@@ -1,0 +1,14 @@
+services:
+  app:
+    ports:
+      - '3000:3000'
+    user: node
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend
+    command: >
+      sh -c "npm i && npm run dev"
+    volumes:
+      - ./frontend:/frontend
+      - ./frontend/node_modules:/frontend/node_modules
+    restart: always

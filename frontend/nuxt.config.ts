@@ -5,6 +5,24 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-  modules: ['@nuxt/fonts'],
-  vite: { plugins: [tailwindcss()] }
+  modules: ['@nuxt/fonts', '@nuxt/image'],
+  vite: { plugins: [tailwindcss()] },
+  image: {
+    format: ['webp']
+  },
+  app: {
+    head: {
+      title: 'Smile!',
+      htmlAttrs: {
+        lang: 'nl'
+      },
+      meta: [
+        {
+          name: 'description',
+          content: 'Doe eens even lachen!'
+        }
+      ]
+      // link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }]
+    }
+  }
 })

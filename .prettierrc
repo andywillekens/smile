@@ -1,14 +1,13 @@
 {
-    "printWidth": 100,
-    "tabWidth": 2,
-    "tabs": true,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "none",
-    "bracketSpacing": true,
-    "bracketSameLine": true,
-    "tailwindConfig": "./frontend/src/styles/index.css",
-    "tailwindPreserveWhitespace": false,
-    "tailwindPreserveDuplicates": false
-  }
-  
+  "printWidth": 100,
+  "tabWidth": 2,
+  "tabs": true,
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "bracketSameLine": true,
+  "tailwindConfig": "./frontend/assets/css/main.css",
+  "tailwindPreserveWhitespace": false,
+  "tailwindPreserveDuplicates": false
+}

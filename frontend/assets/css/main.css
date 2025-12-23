@@ -1,1 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import 'tailwindcss';
+
+@theme {
+  --color-primary-50: #eeeeff;
+  --color-primary-100: #e0e1ff;
+  --color-primary-200: #c7c8fe;
+  --color-primary-300: #a5a7fc;
+  --color-primary-400: #8184f8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4649e5;
+  --color-primary-700: #383bca;
+  --color-primary-800: #3032a3;
+  --color-primary-900: #2e3081;
+  --color-primary-950: #1b1c4b;
+
+  --font-press-start: 'Press Start 2P', system-ui;
+
+  --color-black: #0a080a;
+  --color-white: #ffffff;
+  --color-lightgray: #f6f7f9;
+  --color-gray: #edeef1;
+}
+
+@layer base {
+  html,
+  body,
+  #__nuxt {
+    @apply flex h-screen flex-col;
+  }
+
+  body {
+    @apply bg-black text-white font-press-start overflow-hidden;
+  }
+
+  #__nuxt {
+    @apply flex-1;
+  }
+}
+
+@utility button {
+  @apply bg-white text-black px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-2xl cursor-pointer shadow-[inset_-2px_-2px_0_2px_rgba(0,0,0,0.25),4px_0_0_0_black,-4px_0_0_0_black,0_4px_0_0_black,0_-4px_0_0_black];
+
+  &:hover {
+    @apply bg-lightgray shadow-[inset_-3px_-3px_0_3px_rgba(0,0,0,0.25),4px_0_0_0_black,-4px_0_0_0_black,0_4px_0_0_black,0_-4px_0_0_black];
+  }
+
+  &:active {
+    @apply bg-gray shadow-[inset_2px_2px_0_2px_rgba(0,0,0,0.25),4px_0_0_0_black,-4px_0_0_0_black,0_4px_0_0_black,0_-4px_0_0_black];
+  }
+}
+
+.flash {
+  opacity: 1 !important;
+}

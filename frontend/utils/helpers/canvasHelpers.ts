@@ -1,27 +1,20 @@
-export const drawNotFoundImage = (
-  canvas: HTMLCanvasElement | null,
-  imagePath: string
-) => {
+export const drawNotFoundImage = (canvas: HTMLCanvasElement | null) => {
   if (!canvas) return
 
   const ctx = canvas.getContext('2d')
   if (!ctx) return
 
-  canvas.width = 288
-  canvas.height = 391
+  ctx.fillStyle = '#000000'
+  ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-  const img = new Image()
-  img.onload = () => {
-    if (!canvas || !ctx) return
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-  }
-  img.src = imagePath
+  ctx.fillStyle = '#FFFFFF'
+  ctx.font = 'bold 120px Arial'
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'middle'
+  ctx.fillText('?', canvas.width / 2, canvas.height / 2)
 }
 
-export const capturePictureFromVideo = (
-  canvas: HTMLCanvasElement,
-  video: HTMLVideoElement
-) => {
+export const capturePictureFromVideo = (canvas: HTMLCanvasElement, video: HTMLVideoElement) => {
   const ctx = canvas.getContext('2d')
   if (!ctx) return
 
@@ -41,9 +34,7 @@ export const downloadCompositePicture = async (
   frameImg.crossOrigin = 'anonymous'
 
   frameImg.onload = () => {
-    const frameElement = document.querySelector(
-      'img[alt="Smile"]'
-    ) as HTMLImageElement
+    const frameElement = document.querySelector('img[alt="Smile"]') as HTMLImageElement
     if (!frameElement) return
 
     const frameRect = frameElement.getBoundingClientRect()
@@ -90,4 +81,3 @@ export const downloadCompositePicture = async (
 
   frameImg.src = frameImagePath
 }
-

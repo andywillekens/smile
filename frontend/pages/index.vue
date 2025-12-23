@@ -157,8 +157,31 @@ onMounted(async () => {
   } catch (error) {
     console.error('Error accessing webcam:', error)
     cameraDenied.value = true
-    drawNotFoundImage(canvas.value, '/images/jesus.jpg')
-    updateCanvasSize()
+
+    const drawNotFound = () => {
+      if (canvas.value && frameImage.value) {
+        updateCanvasSize()
+        drawNotFoundImage(canvas.value)
+      }
+    }
+    if (frameImage.value) {
+      drawNotFound()
+    } else {
+      const checkAndDraw = () => {
+        const img = document.querySelector('img[alt="Smile"]') as HTMLImageElement
+        if (img) {
+          frameImage.value = img
+          if (img.complete) {
+            drawNotFound()
+          } else {
+            img.addEventListener('load', drawNotFound, { once: true })
+          }
+        } else {
+          setTimeout(checkAndDraw, 50)
+        }
+      }
+      checkAndDraw()
+    }
   }
 })
 

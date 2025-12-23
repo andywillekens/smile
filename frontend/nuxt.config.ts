@@ -8,7 +8,6 @@ export default defineNuxtConfig({
   modules: ['@nuxt/fonts', '@nuxt/image'],
   vite: { plugins: [tailwindcss()] },
   image: {
-    provider: 'vercel',
     format: ['webp']
   },
   app: {

@@ -200,7 +200,12 @@ onUnmounted(() => {
           style="left: 50%; transform: translateX(-50%); width: 288px; height: 391px"></div>
       </template>
     </ClientOnly>
-    <NuxtImg src="/images/portret.png" alt="Smile" class="w-[960px] object-cover" />
+    <NuxtImg
+      src="/images/portret.png"
+      alt="Smile"
+      width="512"
+      height="512"
+      class="w-[960px] object-cover" />
   </div>
   <div
     :class="[

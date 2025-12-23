@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/fonts', '@nuxt/image'],
   vite: { plugins: [tailwindcss()] },
   image: {
-    format: ['webp'],
+    format: ['png'],
     screens: {
       image: 512
     }

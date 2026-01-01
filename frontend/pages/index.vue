@@ -224,7 +224,7 @@ onUnmounted(() => {
       </template>
     </ClientOnly>
     <NuxtImg
-      src="/images/portret.png"
+      src="/assets/images/portret.png"
       alt="Smile"
       width="512"
       height="512"

@@ -14,3 +14,6 @@ export const initializeCamera = async (width: number, height: number) => {
   return { stream, video }
 }
 
+
+
+

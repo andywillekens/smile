@@ -35,3 +35,6 @@ export const drawCountdownText = (
   ctx.restore()
 }
 
+
+
+

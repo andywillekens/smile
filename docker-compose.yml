@@ -1,14 +1,16 @@
 services:
   app:
-    ports:
-      - '3000:3000'
-    user: node
     build:
       dockerfile: Dockerfile
       context: ./frontend
-    command: >
-      sh -c "npm i && npm run dev"
+    ports:
+      - '3000:3000'
     volumes:
       - ./frontend:/frontend
-      - ./frontend/node_modules:/frontend/node_modules
+      - node_modules:/frontend/node_modules
+    command: npm run dev
     restart: always
+
+volumes:
+  node_modules:
+    driver: local

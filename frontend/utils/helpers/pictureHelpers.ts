@@ -19,9 +19,11 @@ export const capturePicture = (
     state.clearAnimationFrame()
   }
 
-  capturePictureFromVideo(canvas, video)
-  state.isPictureTaken.value = true
   triggerFlash(flashOverlay)
+  setTimeout(() => {
+    capturePictureFromVideo(canvas, video)
+    state.isPictureTaken.value = true
+  }, 200)
 
   setTimeout(() => {
     state.isCountdownActive.value = false
@@ -48,4 +50,3 @@ export const resetPictureState = (state: ResetState) => {
     state.clearCountdownTimeout()
   }
 }
-

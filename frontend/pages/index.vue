@@ -80,7 +80,7 @@ const resetPicture = () => {
 const downloadPicture = async () => {
   if (!canvas.value) return
 
-  await downloadCompositePicture(canvas.value, '/images/portret.png', resetPicture)
+  await downloadCompositePicture(canvas.value, '/assets/images/portret.png', resetPicture)
 }
 
 const smile = () => {
@@ -211,7 +211,7 @@ onUnmounted(() => {
   <div class="flex flex-col items-center justify-top h-full relative">
     <div
       ref="flashOverlay"
-      class="absolute inset-0 bg-white z-50 opacity-0 transition-opacity duration-200 pointer-events-none"></div>
+      class="absolute inset-0 bg-white z-50 opacity-0 pointer-events-none"></div>
     <ClientOnly>
       <canvas
         ref="canvas"
